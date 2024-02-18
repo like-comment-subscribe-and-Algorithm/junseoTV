@@ -1,4 +1,4 @@
-package main.kotlin.baekjoon.chapter4
+package main.kotlin.baekjoon.chapter6
 
 import kotlin.math.pow
 
