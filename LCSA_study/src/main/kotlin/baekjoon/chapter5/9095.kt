@@ -16,7 +16,7 @@ fun countAlign(i: Int, j: Int, k: Int): Int {
     return factorial(i + j + k) / (factorial(i) * factorial(j) * factorial(k))
 }
 
-fun solve(n: Int): Int {
+private fun solve(n: Int): Int {
     var solved: Int = 0
     for (i in 0..n / 2) {
         for (j in 0..(n - 2 * i) / 3) {
