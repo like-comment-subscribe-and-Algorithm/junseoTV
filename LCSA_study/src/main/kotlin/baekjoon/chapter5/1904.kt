@@ -16,7 +16,7 @@ fun main() {
     println(list[n - 1])
 }
 
-fun preCount(n: Int) {
+private fun preCount(n: Int) {
     factorial.add(1)
 
     for (i in 1..n) {
@@ -24,7 +24,7 @@ fun preCount(n: Int) {
     }
 }
 
-fun solve(n: Int): Long {
+private fun solve(n: Int): Long {
     var temp: Int = 0
     var solved: Long = 0
 
