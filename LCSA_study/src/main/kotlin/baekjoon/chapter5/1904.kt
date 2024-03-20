@@ -24,7 +24,7 @@ fun preCount(n: Int) {
     }
 }
 
-fun solve(n: Int): Long {
+private fun solve(n: Int): Long {
     var temp: Int = 0
     var solved: Long = 0
 
