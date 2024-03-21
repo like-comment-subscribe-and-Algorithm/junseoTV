@@ -11,7 +11,7 @@ fun main() {
     println(solution(list, input[1]))
 }
 
-fun solution(list: MutableList<MutableList<Int>>, country: Int): Int {
+private fun solution(list: MutableList<MutableList<Int>>, country: Int): Int {
     var count = 1
     for (i in 0..<list.size) {
         if (list[i][0] == country) {
