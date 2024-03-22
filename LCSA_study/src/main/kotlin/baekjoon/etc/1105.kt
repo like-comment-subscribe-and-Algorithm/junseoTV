@@ -1,4 +1,4 @@
-package main.kotlin.baekjoon.etc.ses9928
+package main.kotlin.baekjoon.etc
 
 fun main() {
     val input = readln().split(" ").map { it.toInt() }
