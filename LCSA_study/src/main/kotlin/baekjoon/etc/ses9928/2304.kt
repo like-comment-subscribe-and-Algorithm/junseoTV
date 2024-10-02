@@ -10,6 +10,7 @@ private fun solution(list: List<Pair<Int, Int>>): Int {
     spots.add(Pair(sortedList[0].first, sortedList[0].second))
 
     var beforeSpot = sortedList[0]
+    var boolean = false
 
     for (i in 1 until sortedList.size) {
         when {
@@ -20,16 +21,19 @@ private fun solution(list: List<Pair<Int, Int>>): Int {
                     spots.add(Pair(sortedList[i].first + 1, sortedList[i].second))
                 }
                 beforeSpot = sortedList[i]
+                boolean = false
             }
 
             beforeSpot.second > sortedList[i].second -> {
-                if (sortedList.find { it.first > sortedList[i].first && it.second > sortedList[i].second } != null) {
+                if (sortedList.find { it.first > sortedList[i].first && beforeSpot.second > sortedList[i].second } != null) {
                     continue
                 }
-                spots.add(Pair(beforeSpot.first + 1, beforeSpot.second))
-                spots.add(Pair(beforeSpot.first + 1, sortedList[i].second))
+                val tempX = if (boolean) beforeSpot.first else beforeSpot.first + 1
+                spots.add(Pair(tempX, beforeSpot.second))
+                spots.add(Pair(tempX, sortedList[i].second))
                 spots.add(Pair(sortedList[i].first + 1, sortedList[i].second))
                 beforeSpot = Pair(sortedList[i].first + 1, sortedList[i].second)
+                boolean = true
             }
 
             beforeSpot.second == sortedList[i].second -> {
@@ -39,6 +43,7 @@ private fun solution(list: List<Pair<Int, Int>>): Int {
                     spots.add(Pair(sortedList[i].first, sortedList[i].second))
                     beforeSpot = sortedList[i]
                 }
+                boolean = false
             }
         }
     }
